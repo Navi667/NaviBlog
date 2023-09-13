@@ -1,0 +1,65 @@
+.profile {
+    height: 100vh;    
+    display: flex;
+    background-color: #f2f4f6;
+
+}
+
+.profileWrapper {
+    flex: 4;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profileSimple {
+    display: flex;
+    height: 30vh;
+}
+
+.profileImg {
+    width: 200px;
+    height: 200px;
+    margin-right: 30px;
+}
+
+.profileTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.profileDetail {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 10px;
+    border: 1px solid pink;
+}
+.profileRecent {
+    margin-right: 50px;
+    flex-shrink: 0;
+
+}
+.profileRecent>p {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.recentList {
+   list-style: none;
+}
+.recentItem {
+    margin-top: 8px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+.detailTitle {
+    margin-bottom: 8px;
+    border-bottom: 1px solid grey;
+}
+.detailContent {
+    line-height: 25px;
+    text-indent: 2em;
+}
+.profileBottom {
+   margin-top: auto;
+}
