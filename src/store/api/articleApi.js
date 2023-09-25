@@ -31,6 +31,13 @@ export const articleApi = createApi({
                 query(tag){
                     return `articles?filters[tag]=${tag}&populate=*`
                 }
+            }),
+
+            //搜索文章接口，针对标题和标签搜索
+            getArticlesBySearch: build.query({
+                query(keyWord){
+                    return `articles?filters[$or][0][title][$contains]=${keyWord}&filters[$or][1][tag][$contains]=${keyWord}&populate=*`
+                }
             })
 
 
@@ -41,6 +48,7 @@ export const articleApi = createApi({
 export const { 
     useGetAllArticlesQuery,
     useGetOneArticleByIdQuery,
-    useGetArticlesByTagQuery
+    useGetArticlesByTagQuery,
+    useGetArticlesBySearchQuery
  } = articleApi;
 export default articleApi;

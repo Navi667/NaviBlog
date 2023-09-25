@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
+import React, {lazy, Suspense} from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import Home from "./components/pages/home/Home";
@@ -10,6 +10,8 @@ import Profile from "./components/pages/profile/Profile";
 import Login from "./components/pages/login/Login";
 import Categories from "./components/pages/categories/categories";
 import CategoryPage from "./components/pages/categoryPage/categoryPage";
+import SearchPage from "./components/pages/searchPage/searchPage";
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="categories" element={<Categories></Categories>}></Route>
         <Route path="category/:tag" element={<CategoryPage></CategoryPage>}></Route>
+        <Route path="search/:keyWord" element={<SearchPage></SearchPage>}></Route>
         <Route path='*' element={<div>default</div>}></Route>
 
       </Routes>

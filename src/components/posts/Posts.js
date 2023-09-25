@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import "./posts.css";
 import PostCard from "../post/Post";
 import { useGetAllArticlesQuery } from '../../store/api/articleApi';
@@ -56,7 +56,6 @@ const PostsPage = (props) => {
 export default function Posts() {
 
   const { data, isLoading, isSuccess, isError, error } = useGetAllArticlesQuery();
-  console.log(data)
 
   let articlesList, content;
   if (isLoading) {
@@ -65,7 +64,7 @@ export default function Posts() {
     articlesList = data.data;
     content = <PostsPage articlesList={articlesList}></PostsPage>
   } else if (isError) {
-    alert(error.toString())
+    console.log(error.toString());
   }
 
   return (
